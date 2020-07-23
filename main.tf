@@ -57,7 +57,7 @@ module "eks" {
 }
 
 provider "kubernetes" {
-   config_path = "kubeconfig_eks_poc"
+   config_path = "kubeconfig_${var.eks_cluster_name}"
 }
 resource "kubernetes_namespace" "prometheus" {
   metadata {
