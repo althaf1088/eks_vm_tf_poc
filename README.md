@@ -35,8 +35,8 @@ Access http://localhost:9090
 
 4. Validate if Prometheus data is ingested to victoria metrics
 ```sh
-export POD_NAME=$(kubectl get pods --namespace vm -l "app=vmselect" -o jsonpath="{.items[0].metadata.name}")
-kubectl --namespace vm port-forward $POD_NAME 8481
+export POD_NAME=$(kubectl get pods --namespace prometheus -l "app=vmselect" -o jsonpath="{.items[0].metadata.name}")
+kubectl --namespace prometheus port-forward $POD_NAME 8481
 
 ```
 GET http://localhost:8481/select/0/prometheus/api/v1/labels
